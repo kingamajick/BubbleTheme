@@ -380,14 +380,14 @@ Bubble:
       border-radius: var(--theme-radius-card, 14px) !important;
       background: var(--theme-surface, #162221) !important;
       box-shadow: inset 0 0 0 1px var(--theme-border, rgba(255, 255, 255, 0.08)) !important;
-      transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out !important;
+      transition: box-shadow 0.2s ease-in-out !important;
     }
     .bubble-button-card-container:hover {
-      box-shadow: inset 0 0 0 1px var(--theme-border-strong, rgba(255, 255, 255, 0.22)), 0 0 16px -2px rgba(63, 167, 150, 0.25) !important;
+      /* Only the border stroke illuminates on hover; background is untouched */
+      box-shadow: inset 0 0 0 1px var(--theme-border-strong, rgba(255, 255, 255, 0.28)), 0 0 16px -3px rgba(63, 167, 150, 0.25) !important;
     }
     .bubble-icon-container {
       border-radius: var(--theme-radius-control, 8px) !important;
-      transition: all 0.2s ease-in-out !important;
     }
     .bubble-range-fill {
       background-color: var(--theme-accent, #3FA796) !important;
