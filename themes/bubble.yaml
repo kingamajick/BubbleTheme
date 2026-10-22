@@ -376,6 +376,11 @@ Bubble:
       transition: none;
       border-style: none !important;
     }
+    /* Disable Home Assistant's built-in hover ripple overlay that lightens the background */
+    ha-ripple,
+    .bubble-button-card-container > ha-ripple {
+      display: none !important;
+    }
     .bubble-button-card-container {
       border-radius: var(--theme-radius-card, 14px) !important;
       background: var(--theme-surface, #162221) !important;
@@ -383,10 +388,9 @@ Bubble:
       transition: box-shadow 0.2s ease-in-out !important;
     }
     .bubble-button-card-container:hover {
-      /* Pure hairline border illumination on hover; zero outer blur halo, zero background shift */
-      box-shadow: inset 0 0 0 1.5px var(--theme-border-strong, rgba(255, 255, 255, 0.35)) !important;
+      /* Strictly 1px hairline border illumination; zero background shift */
+      box-shadow: inset 0 0 0 1px var(--theme-border-strong, rgba(255, 255, 255, 0.28)) !important;
       background: var(--theme-surface, #162221) !important;
-      filter: none !important;
     }
     .bubble-icon-container {
       border-radius: var(--theme-radius-control, 8px) !important;
