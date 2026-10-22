@@ -8,12 +8,14 @@ Bubble:
   modes:
     dark:
       # Semantic Design Tokens
-      theme-accent: "#E5A86D"                       # Sand (Warm Terracotta / Gold)
-      theme-accent-rgb: "229, 168, 109"
-      theme-accent-fill: "rgba(229, 168, 109, 0.15)"
-      theme-surface: "#18181b"
-      theme-surface-subtle: "#242429"
-      theme-radius-card: "18px"
+      theme-accent: "#3FA796"                       # Harbour Deep Teal
+      theme-accent-rgb: "63, 167, 150"
+      theme-accent-fill: "rgba(63, 167, 150, 0.16)"
+      theme-surface: "#162221"                      # Fluvy Dark Slate / Sea-Grey
+      theme-surface-subtle: "#1c2b2a"
+      theme-border: "rgba(255, 255, 255, 0.08)"    # Fluvy Inset Hairline Stroke
+      theme-radius-card: "20px"                     # Fluvy Soft Card Radius (20px)
+      theme-radius-control: "12px"                  # Fluvy Control/Icon Radius (12px)
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 
       # Bubble Card Tokens
@@ -73,18 +75,18 @@ Bubble:
       accent-medium-color: "var(--accent-color)"
 
       # Background
-      background-color: "rgba(57, 54, 70, 1)" #'rgb(23, 24, 26)'
-      primary-background-color: "var(--background-color)"
-      background-color-2: "rgb(92, 83, 103)" #'#2e4a74'
-      secondary-background-color: "var(--background-color-2)"
+      background-color: "#09100F"
+      primary-background-color: "#09100F"
+      background-color-2: "var(--theme-surface-subtle)"
+      secondary-background-color: "var(--theme-surface-subtle)"
       markdown-code-background-color: "var(--background-color)"
 
       # Card
-      card-background-color: "var(--ha-card-background)"
-      ha-card-background: "rgba(79, 69, 87, 1)" #'rgb(36, 37, 41)'
-      ha-card-box-shadow: "none"
+      card-background-color: "var(--theme-surface)"
+      ha-card-background: "var(--theme-surface)"
+      ha-card-box-shadow: "inset 0 0 0 1px var(--theme-border)"
       ha-card-border-radius: "var(--theme-radius-card)"
-      ha-card-border-style: "solid"
+      ha-card-border-style: "none"
       ha-card-border-width: "0px"
       ha-card-border-color: "none"
       border-color: "none"
@@ -161,12 +163,14 @@ Bubble:
 
     light:
       # Semantic Design Tokens
-      theme-accent: "#E5A86D"                       # Sand (Warm Terracotta / Gold)
-      theme-accent-rgb: "229, 168, 109"
-      theme-accent-fill: "rgba(229, 168, 109, 0.15)"
-      theme-surface: "#18181b"
-      theme-surface-subtle: "#242429"
-      theme-radius-card: "18px"
+      theme-accent: "#3FA796"                       # Harbour Deep Teal
+      theme-accent-rgb: "63, 167, 150"
+      theme-accent-fill: "rgba(63, 167, 150, 0.16)"
+      theme-surface: "#162221"                      # Fluvy Dark Slate / Sea-Grey
+      theme-surface-subtle: "#1c2b2a"
+      theme-border: "rgba(255, 255, 255, 0.08)"    # Fluvy Inset Hairline Stroke
+      theme-radius-card: "20px"                     # Fluvy Soft Card Radius (20px)
+      theme-radius-control: "12px"                  # Fluvy Control/Icon Radius (12px)
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 
       # Bubble Card Tokens
@@ -370,10 +374,16 @@ Bubble:
       transition: none;
       border-style: none !important;
     }
-    .bubble-range-fill {
-      background-color: var(--theme-accent, var(--bubble-accent-color)) !important;
-      opacity: 0.85 !important;
-    }
     .bubble-button-card-container {
-      border-radius: var(--theme-radius-card, 18px) !important;
+      border-radius: var(--theme-radius-card, 20px) !important;
+      background: var(--theme-surface, #162221) !important;
+      box-shadow: inset 0 0 0 1px var(--theme-border, rgba(255, 255, 255, 0.08)) !important;
+      transition: all 0.2s ease-in-out !important;
+    }
+    .bubble-icon-container {
+      border-radius: var(--theme-radius-control, 12px) !important;
+    }
+    .bubble-range-fill {
+      background-color: var(--theme-accent, #3FA796) !important;
+      opacity: 0.85 !important;
     }
