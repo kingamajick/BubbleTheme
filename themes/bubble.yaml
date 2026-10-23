@@ -22,6 +22,10 @@ Bubble:
       theme-radius-control: "8px"                   # Crisp icon / control radius
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 
+      # Presence / Status Tokens (Option B)
+      theme-presence-home: "#7CBAB2"                # Soft Seafoam (In)
+      theme-presence-away: "#E5B282"                # Warm Sand (Away)
+
       # Bubble Card Tokens
       bubble-accent-color: "var(--theme-accent)"
       bubble-button-accent-color: "var(--theme-accent-fill)"
@@ -181,6 +185,10 @@ Bubble:
       theme-radius-card: "14px"                     # Crisp modern card radius (less rounded)
       theme-radius-control: "8px"                   # Crisp icon / control radius
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+
+      # Presence / Status Tokens (Option B)
+      theme-presence-home: "#7CBAB2"                # Soft Seafoam (In)
+      theme-presence-away: "#E5B282"                # Warm Sand (Away)
 
       # Bubble Card Tokens
       bubble-accent-color: "var(--theme-accent)"
