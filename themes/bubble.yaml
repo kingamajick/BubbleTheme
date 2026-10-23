@@ -422,12 +422,10 @@ Bubble:
       background: var(--theme-accent-fill, #253231) !important;
       opacity: 1 !important;
       border-radius: var(--theme-radius-card, 14px) !important;
-      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
     .is-on:not(:has(.bubble-range-slider)) .bubble-button-card-container,
     .is-on .bubble-button-card-container:not(.bubble-button-slider-container):not(:has(.bubble-range-slider)) {
       background: var(--theme-accent-fill, #253231) !important;
-      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
     .is-off .bubble-background {
       opacity: 0 !important;
@@ -440,10 +438,6 @@ Bubble:
     .is-on:has(.bubble-range-slider) .bubble-button-card-container {
       background: var(--theme-surface, #161B1A) !important;
       background-color: var(--theme-surface, #161B1A) !important;
-    }
-    .is-on:has(.bubble-range-slider) .bubble-button-card-container,
-    .is-on .bubble-button-slider-container {
-      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
       display: none !important;
