@@ -414,13 +414,12 @@ Bubble:
     }
 
     /* ─── ON / ACTIVE STATE ─── */
-    /* 1. Card fills with muted Fluvy Harbour active fill (#253231) */
-    .bubble-button-card-container.is-on {
+    /* 1. Switch Cards: whole card fills with muted Fluvy Harbour active fill (#253231) */
+    .bubble-button-card-container:not(.bubble-button-slider-container):not(:has(.bubble-range-slider)).is-on {
       background: var(--theme-accent-fill, #253231) !important;
       box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
-    .is-on .bubble-background,
-    .bubble-button-card-container.is-on .bubble-background {
+    .bubble-button-card-container:not(.bubble-button-slider-container):not(:has(.bubble-range-slider)).is-on .bubble-background {
       background-color: var(--theme-accent-fill, #253231) !important;
       background: var(--theme-accent-fill, #253231) !important;
       opacity: 1 !important;
@@ -431,19 +430,37 @@ Bubble:
       opacity: 0 !important;
       background: transparent !important;
     }
-    .bubble-range-fill {
-      background-color: var(--theme-accent-fill, #253231) !important;
-      opacity: 1 !important;
+
+    /* 2. Slider Cards: container stays dark resting surface so the percentage bar has clear contrast */
+    .bubble-button-slider-container,
+    .bubble-button-slider-container.is-on,
+    .bubble-button-card-container:has(.bubble-range-slider),
+    .bubble-button-card-container:has(.bubble-range-slider).is-on {
+      background: var(--theme-surface, #161B1A) !important;
+      background-color: var(--theme-surface, #161B1A) !important;
+    }
+    .bubble-button-slider-container.is-on,
+    .bubble-button-card-container:has(.bubble-range-slider).is-on {
       box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
+    .bubble-range-slider {
+      border-radius: var(--theme-radius-card, 14px) !important;
+    }
+    /* Slider fill bar: fills proportionally to percentage */
+    .bubble-range-fill {
+      background-color: var(--theme-accent-fill, #253231) !important;
+      background: var(--theme-accent-fill, #253231) !important;
+      opacity: 1 !important;
+      border-right: 2px solid var(--theme-accent, #3FA796) !important;
+    }
 
-    /* 2. Icon box INVERTS when ON: dark background cutout */
+    /* 3. Icon box INVERTS when ON: dark background cutout */
     .is-on .bubble-icon-container {
       background-color: var(--theme-surface, #161B1A) !important;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
     }
 
-    /* 3. Icon lights up highlighted */
+    /* 4. Icon lights up highlighted */
     .is-on .bubble-icon {
       color: var(--theme-accent, #3FA796) !important;
     }
