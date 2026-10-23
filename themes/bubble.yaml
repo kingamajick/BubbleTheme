@@ -8,14 +8,16 @@ Bubble:
   modes:
     dark:
       # Semantic Design Tokens (Fluvy Harbour Dark)
-      theme-accent: "#3FA796"                       # Crisp Accent Ink
+      theme-accent: "#3FA796"                       # Crisp Accent Ink (ON state)
       theme-accent-ink: "#7CBAB2"                   # Soft Seafoam Icon/Text Ink for ON state
       theme-accent-fill: "#253231"                  # Fluvy Exact Muted Active Surface (RGB 37, 50, 49)
+      theme-icon-box-off: "rgba(63, 167, 150, 0.12)" # Icon Box Subtle Accent Tint (OFF state)
+      theme-icon-off: "#5A938C"                     # Icon Subtle Accent Tint (OFF state)
       theme-surface: "#161B1A"                      # Fluvy Exact Resting Surface (RGB 22, 27, 26)
       theme-surface-subtle: "#1C2423"
       theme-border: "rgba(255, 255, 255, 0.08)"    # Subtle Resting Hairline
       theme-border-strong: "rgba(255, 255, 255, 0.22)" # Subtle Glowing Border on Hover
-      theme-border-active: "rgba(63, 167, 150, 0.38)"  # Subtle Accent Hairline on Active State
+      theme-border-active: "rgba(63, 167, 150, 0.40)"  # Subtle Accent Hairline on Active State
       theme-radius-card: "14px"                     # Crisp modern card radius (less rounded)
       theme-radius-control: "8px"                   # Crisp icon / control radius
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -165,14 +167,16 @@ Bubble:
 
     light:
       # Semantic Design Tokens (Fluvy Harbour Dark)
-      theme-accent: "#3FA796"                       # Crisp Accent Ink
+      theme-accent: "#3FA796"                       # Crisp Accent Ink (ON state)
       theme-accent-ink: "#7CBAB2"                   # Soft Seafoam Icon/Text Ink for ON state
       theme-accent-fill: "#253231"                  # Fluvy Exact Muted Active Surface (RGB 37, 50, 49)
+      theme-icon-box-off: "rgba(63, 167, 150, 0.12)" # Icon Box Subtle Accent Tint (OFF state)
+      theme-icon-off: "#5A938C"                     # Icon Subtle Accent Tint (OFF state)
       theme-surface: "#161B1A"                      # Fluvy Exact Resting Surface (RGB 22, 27, 26)
       theme-surface-subtle: "#1C2423"
       theme-border: "rgba(255, 255, 255, 0.08)"    # Subtle Resting Hairline
       theme-border-strong: "rgba(255, 255, 255, 0.22)" # Subtle Glowing Border on Hover
-      theme-border-active: "rgba(63, 167, 150, 0.38)"  # Subtle Accent Hairline on Active State
+      theme-border-active: "rgba(63, 167, 150, 0.40)"  # Subtle Accent Hairline on Active State
       theme-radius-card: "14px"                     # Crisp modern card radius (less rounded)
       theme-radius-control: "8px"                   # Crisp icon / control radius
       theme-font: "'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -383,6 +387,8 @@ Bubble:
     .bubble-button-card-container > ha-ripple {
       display: none !important;
     }
+
+    /* ─── OFF / RESTING STATE ─── */
     .bubble-button-card-container {
       border-radius: var(--theme-radius-card, 14px) !important;
       background: var(--theme-surface, #161B1A) !important;
@@ -393,20 +399,44 @@ Bubble:
       /* Strictly 1px hairline border illumination on hover; background is untouched */
       box-shadow: inset 0 0 0 1px var(--theme-border-strong, rgba(255, 255, 255, 0.28)) !important;
     }
+
+    /* Icon box when OFF: subtle accent-tinted background */
     .bubble-icon-container {
       border-radius: var(--theme-radius-control, 8px) !important;
+      background-color: var(--theme-icon-box-off, rgba(63, 167, 150, 0.12)) !important;
+      box-shadow: inset 0 0 0 1px rgba(63, 167, 150, 0.15) !important;
+      transition: all 0.2s ease-in-out !important;
     }
-    /* Muted Fluvy Active States */
+    /* Icon when OFF: subtle accent tint */
+    .bubble-icon {
+      color: var(--theme-icon-off, #5A938C) !important;
+      transition: color 0.2s ease-in-out !important;
+    }
+
+    /* ─── ON / ACTIVE STATE ─── */
+    /* 1. Card fills with accent fill */
+    .bubble-button-card-container.is-on {
+      background: var(--theme-accent-fill, #253231) !important;
+      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
+    }
+    .bubble-background.background-on {
+      background-color: var(--theme-accent-fill, #253231) !important;
+      opacity: 1 !important;
+      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
+    }
     .bubble-range-fill {
       background-color: var(--theme-accent-fill, #253231) !important;
       opacity: 1 !important;
-      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.38)) !important;
+      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
-    .bubble-background {
-      background-color: var(--theme-accent-fill, #253231) !important;
-      opacity: 1 !important;
-      box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.38)) !important;
+
+    /* 2. Icon box INVERTS when ON: dark background cutout */
+    .is-on .bubble-icon-container {
+      background-color: var(--theme-surface, #161B1A) !important;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
     }
+
+    /* 3. Icon lights up highlighted */
     .is-on .bubble-icon {
-      color: var(--theme-accent-ink, #7CBAB2) !important;
+      color: var(--theme-accent, #3FA796) !important;
     }
