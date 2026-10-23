@@ -414,15 +414,22 @@ Bubble:
     }
 
     /* ─── ON / ACTIVE STATE ─── */
-    /* 1. Card fills with accent fill */
+    /* 1. Card fills with muted Fluvy Harbour active fill (#253231) */
     .bubble-button-card-container.is-on {
       background: var(--theme-accent-fill, #253231) !important;
       box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
     }
-    .bubble-background.background-on {
+    .is-on .bubble-background,
+    .bubble-button-card-container.is-on .bubble-background {
       background-color: var(--theme-accent-fill, #253231) !important;
+      background: var(--theme-accent-fill, #253231) !important;
       opacity: 1 !important;
+      border-radius: var(--theme-radius-card, 14px) !important;
       box-shadow: inset 0 0 0 1px var(--theme-border-active, rgba(63, 167, 150, 0.40)) !important;
+    }
+    .is-off .bubble-background {
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-fill {
       background-color: var(--theme-accent-fill, #253231) !important;
