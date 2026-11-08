@@ -442,7 +442,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -911,7 +912,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -1380,7 +1382,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -1849,7 +1852,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -2318,7 +2322,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -2787,7 +2792,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -3256,7 +3262,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -3725,7 +3732,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -4194,7 +4202,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
@@ -4663,7 +4672,8 @@
       background-color: var(--theme-surface, #161B1A) !important;
     }
     :has(.bubble-range-slider) .bubble-background {
-      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
     }
     .bubble-range-slider {
       border-radius: var(--theme-radius-card, 14px) !important;
